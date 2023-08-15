@@ -1,0 +1,2230 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/interactivedesigner/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+                    xmlns:local="clr-namespace:BeRMOoDA.WPF.FileEncryptor">
+	
+	<!-- SimpleStyles.XAML defines a set of control styles which are simplified starting points for creating your own controls -->
+	
+	<!-- Brushes : These are used to define the color for background, foreground, selection, enabled etc of all controls
+	If you want to change the color of a control you can just chnage the brush; if you want to add a new shape or change arrangement then also edit the template -->
+    <LinearGradientBrush x:Key="Brush2" EndPoint="1.246,0.43" StartPoint="-0.013,0.422">
+        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+        <GradientStop Color="#FFE0DBDB" Offset="1"/>
+        <GradientStop Color="#FF888686" Offset="0.558"/>
+        <GradientStop Color="#FFBBB8B8" Offset="0.799"/>
+        <GradientStop Color="#FFD2CFCF" Offset="0.228"/>
+    </LinearGradientBrush>
+    
+    <Style x:Key="ButtonStyle2" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEE185"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE185"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFAA902"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFAC302"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEE9A4"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE9A4"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy1">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FEE185"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE185"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FAA902"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFAA902"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FEE9A4"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE9A4"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy2">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FEE185"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFBDF84"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FAA902"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFE4A212"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#99FEE9A4"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFBDF84"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFA3A2A0"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF5E5D5D"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.05"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.05"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy3">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFA8A02"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FEE185"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFBDF84"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FAA902"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFA9502"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FEE9A4"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF807F7F"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFA3A2A0"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.05"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.05"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy4">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFBDF84"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FEE185"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFE4A212"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FAA902"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFBDF84"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#99FEE9A4"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF5E5D5D"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFA3A2A0"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.05"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.05"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy5">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEE185"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE185"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFAC302"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFAA902"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEE9A4"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFEE9A4"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Rectangle Stroke="#FFA3A2A0" RadiusX="7.5" RadiusY="7.5" x:Name="rectangle" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFEE185" Offset="0"/>
+                                    <GradientStop Color="#FFFEE9A4" Offset="1"/>
+                                    <GradientStop Color="#FFFAA902" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy5}" x:Name="Storyboard_Copy5_BeginStoryboard"/>
+                        </EventTrigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy4}" x:Name="Storyboard_Copy3_BeginStoryboard"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy2}" x:Name="Storyboard_Copy2_BeginStoryboard"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DrawingBrush x:Key="DrawingBrush1" Viewbox="0,0,590,590" ViewboxUnits="Absolute">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Transform>
+                    <MatrixTransform Matrix="1,0,0,1,8,8"/>
+                </DrawingGroup.Transform>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#FF11114B" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry RadiusX="10.5" RadiusY="10.5" Rect="0.5,0.5,573,51"/>
+                    </GeometryDrawing.Geometry>
+                    <GeometryDrawing.Brush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#CC6060F7" Offset="0"/>
+                            <GradientStop Color="#FF0A0C45" Offset="1"/>
+                            <GradientStop Color="#FF251C5B" Offset="0.522"/>
+                            <GradientStop Color="#CC251C5B" Offset="0.487"/>
+                            <GradientStop Color="#FF1B1555" Offset="0.772"/>
+                        </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                </GeometryDrawing>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,516,8"/>
+                    </DrawingGroup.Transform>
+                    <DrawingGroup>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FFB9B6B6" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry RadiusX="7" RadiusY="7" Rect="0.5,0.5,22,22"/>
+                            </GeometryDrawing.Geometry>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFA7A6A6" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Transform>
+                                <MatrixTransform Matrix="1,0,0,1,5.26,0"/>
+                            </DrawingGroup.Transform>
+                            <DrawingGroup>
+                                <DrawingGroup.ClipGeometry>
+                                    <RectangleGeometry Rect="0,0,12.48,23"/>
+                                </DrawingGroup.ClipGeometry>
+                                <GeometryDrawing Brush="#FF0B0A8A">
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup FillRule="Nonzero">
+                                            <PathGeometry Figures="M0.9140625,12.656771 L11.25,12.656771 11.25,14.414583 0.9140625,14.414583 0.9140625,12.656771 z" FillRule="Nonzero"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingGroup>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,543,8"/>
+                    </DrawingGroup.Transform>
+                    <DrawingGroup>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FFB9B6B6" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry RadiusX="7" RadiusY="7" Rect="0.5,0.5,22,22"/>
+                            </GeometryDrawing.Geometry>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFA7A6A6" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Transform>
+                                <MatrixTransform Matrix="1,0,0,1,4.395,0"/>
+                            </DrawingGroup.Transform>
+                            <DrawingGroup>
+                                <DrawingGroup.ClipGeometry>
+                                    <RectangleGeometry Rect="0,0,14.21,23"/>
+                                </DrawingGroup.ClipGeometry>
+                                <GeometryDrawing Brush="#FFCB0404">
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup FillRule="Nonzero">
+                                            <PathGeometry Figures="M0.42968762,7.798542 L3.4375,7.798542 7.1435547,13.78194 11.032227,7.798542 13.50293,7.798542 8.421875,15.69405 13.631836,24.126667 10.613281,24.126667 6.703125,17.831745 2.6533203,24.126667 0.17187503,24.126667 5.4462891,15.930378 0.42968762,7.798542 z" FillRule="Nonzero"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingGroup>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,18,8"/>
+                    </DrawingGroup.Transform>
+                    <DrawingGroup.BitmapEffect>
+                        <DropShadowBitmapEffect ShadowDepth="14"/>
+                    </DrawingGroup.BitmapEffect>
+                    <DrawingGroup>
+                        <GeometryDrawing Brush="#00FFFFFF">
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="0,0,408,34"/>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Transform>
+                                <MatrixTransform Matrix="1,0,0,1,5,5"/>
+                            </DrawingGroup.Transform>
+                            <DrawingGroup>
+                                <DrawingGroup.ClipGeometry>
+                                    <RectangleGeometry Rect="0,0,289.106666666667,24"/>
+                                </DrawingGroup.ClipGeometry>
+                                <GeometryDrawing Brush="#FFFFFFFF">
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup FillRule="Nonzero">
+                                            <PathGeometry Figures="M5.5107422,12.644974 L5.5107422,18.499466 6.7246094,18.499466 C8.3144531,18.499466 9.109375,17.58996 9.109375,15.77095 9.109375,13.686966 8.2893877,12.644974 6.6494141,12.644974 L5.5107422,12.644974 z M5.5107422,6.2641144 L5.5107422,11.431107 6.8212891,11.431107 C8.0315752,11.431107 8.6367188,10.535924 8.6367188,8.7455597 8.6367188,7.0912628 7.9957681,6.2641144 6.7138672,6.2641144 L5.5107422,6.2641144 z M1.2568358,5.0502472 L7.7773438,5.0502472 C11.136067,5.0502472 12.81543,6.2497911 12.81543,8.64888 12.81543,10.353307 11.802083,11.44543 9.7753906,11.925247 12.217448,12.412226 13.438477,13.70845 13.438477,15.813919 13.438477,18.413528 11.794922,19.713333 8.5078125,19.713333 L1.2568358,19.713333 1.2568358,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M19.691977,9.6479034 C19.004477,9.6479034 18.617758,10.582474 18.53182,12.451614 L18.488852,13.429153 20.830648,13.429153 C20.830648,10.90832 20.451092,9.6479034 19.691977,9.6479034 z M19.520102,8.5844269 C22.649658,8.5844269 24.214437,10.603958 24.214437,14.643021 L18.499594,14.643021 C18.499594,17.478958 19.21932,18.896927 20.658773,18.896927 22.005127,18.896927 22.678305,18.094843 22.678305,16.490677 22.678305,16.275816 22.671143,16.028753 22.65682,15.749466 L24.235922,16.21138 C24.071209,18.71073 22.595947,19.960403 19.810141,19.960403 16.200766,19.960403 14.396078,18.159296 14.396078,14.557083 14.396078,12.809687 14.875896,11.377396 15.835531,10.260208 16.795166,9.1430206 18.023357,8.5844269 19.520102,8.5844269 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M30.337484,6.4037628 L30.337484,11.452591 31.196859,11.452591 C32.808189,11.452591 33.613853,10.611119 33.613853,8.9281769 33.613853,7.2452345 32.808189,6.4037628 31.196859,6.4037628 L30.337484,6.4037628 z M26.083578,5.0502472 L32.389244,5.0502472 C34.029217,5.0502472 35.339764,5.3957872 36.320885,6.0868683 37.302002,6.7779493 37.792564,7.7035675 37.792564,8.8637238 37.792564,10.639766 36.73983,11.796341 34.634361,12.33345 35.71574,12.734491 36.415771,13.174921 36.734459,13.654739 37.053143,14.134558 37.269775,15.065546 37.384361,16.447708 37.520428,18.094843 37.796143,19.183386 38.21151,19.713333 L33.592369,19.713333 C33.298748,19.032995 33.151939,18.184362 33.151939,17.167435 L33.130455,16.297318 33.108971,15.201614 C33.108971,13.511511 32.428631,12.666458 31.067953,12.666458 L30.337484,12.666458 30.337484,19.713333 26.083578,19.713333 26.083578,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M39.912384,5.0502472 L44.230743,5.0502472 46.744415,13.90181 49.247345,5.0502472 53.608673,5.0502472 53.608673,19.713333 49.505157,19.713333 49.505157,9.508255 46.647736,19.713333 44.273712,19.713333 41.341095,9.68013 41.341095,19.713333 39.912384,19.713333 39.912384,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M62.011555,5.9633331 C61.209473,5.9633331 60.666992,6.4055529 60.384113,7.2899933 60.101234,8.1744337 59.959797,9.8699083 59.959797,12.376419 59.959797,14.882929 60.101234,16.578405 60.384113,17.462845 60.666992,18.347284 61.209473,18.789505 62.011555,18.789505 62.813637,18.789505 63.356117,18.347284 63.638996,17.462845 63.921875,16.578405 64.063309,14.882929 64.063309,12.376419 64.063309,9.8770704 63.921875,8.1833849 63.638996,7.2953644 63.356117,6.4073439 62.813637,5.9633331&#xd;&#xa;62.011555,5.9633331 z M62.129719,4.7924347 C66.397949,4.7924347 68.532059,7.3204298 68.532059,12.376419 68.532059,17.432409 66.358559,19.960403 62.011555,19.960403 57.664551,19.960403 55.491047,17.375116 55.491047,12.204544 55.491047,7.2631378 57.703938,4.7924347 62.129719,4.7924347 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M75.097176,9.5619659 C74.230637,9.5619659 73.797371,11.133906 73.797371,14.277786 73.797371,17.421667 74.230637,18.993607 75.097176,18.993607 75.970871,18.993607 76.407722,17.421667 76.407722,14.277786 76.407722,11.133906 75.970871,9.5619659 75.097176,9.5619659 z M75.107918,8.6059113 C78.688644,8.6059113 80.479012,10.496536 80.479012,14.277786 80.479012,18.059036 78.688644,19.949661 75.107918,19.949661 71.520027,19.949661 69.726082,18.059036 69.726082,14.277786 69.726082,10.496536 71.520027,8.6059113 75.107918,8.6059113 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M86.569481,6.2641144 L86.569481,18.499466 87.686668,18.499466 C88.710754,18.499466 89.419739,18.057245 89.813622,17.172806 90.207504,16.288366 90.404442,14.689569 90.404442,12.376419 90.404442,10.063268 90.20929,8.4662628 89.818993,7.5854034 89.428696,6.7045441 88.717918,6.2641144 87.686668,6.2641144 L86.569481,6.2641144 z M82.315575,5.0502472 L88.395653,5.0502472 C92.714012,5.0502472 94.873192,7.4994659 94.873192,12.397903 94.873192,17.274857 92.635239,19.713333 88.159325,19.713333 L82.315575,19.713333 82.315575,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M100.21731,8.5629425 L98.348167,15.061966 101.9468,15.061966 100.21731,8.5629425 z M99.669456,5.0502472 L103.40774,5.0502472 107.48977,19.713333 103.21438,19.713333 102.34426,16.533646 97.929222,16.533646 96.994652,19.713333 95.329613,19.713333 99.669456,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M115.21684,5.0502472 L124.78812,5.0502472 124.78812,6.5219269 119.47074,6.5219269 119.47074,11.409622 123.98246,11.409622 123.98246,12.881302 119.47074,12.881302 119.47074,19.713333 115.21684,19.713333 115.21684,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M130.00882,8.6059113 L130.00882,19.713333 126.08793,19.713333 126.08793,8.8959503 C127.31254,8.8959503 128.61951,8.7992706 130.00882,8.6059113 z M128.07523,4.6850128 C129.29268,4.6850128 129.9014,5.1576691 129.9014,6.1029816 129.9014,7.0482941 129.29268,7.5209503 128.07523,7.5209503 126.85779,7.5209503 126.24906,7.0482941 126.24906,6.1029816 126.24906,5.1576691 126.85779,4.6850128 128.07523,4.6850128 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M136.11563,4.8354034 L136.11563,19.713333 132.19473,19.713333 132.19473,5.0502472 C133.27611,5.0502467 134.58308,4.9786325 136.11563,4.8354034 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M143.04597,9.6479034 C142.35847,9.6479034 141.97176,10.582474 141.88582,12.451614 L141.84285,13.429153 144.18465,13.429153 C144.18465,10.90832 143.80508,9.6479034 143.04597,9.6479034 z M142.8741,8.5844269 C146.00366,8.5844269 147.56844,10.603958 147.56844,14.643021 L141.85359,14.643021 C141.85359,17.478958 142.57332,18.896927 144.01277,18.896927 145.35913,18.896927 146.0323,18.094843 146.0323,16.490677 146.0323,16.275816 146.02515,16.028753 146.01082,15.749466 L147.58992,16.21138 C147.4252,18.71073 145.94995,19.960403 143.16414,19.960403 139.55476,19.960403 137.75008,18.159296 137.75008,14.557083 137.75008,12.809687 138.22989,11.377396 139.18953,10.260208 140.14917,9.1430206 141.37735,8.5844269 142.8741,8.5844269 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M156.02684,5.0502472 L165.53368,5.0502472 165.53368,6.5219269 160.28075,6.5219269 160.28075,10.95845 164.69579,10.95845 164.69579,12.43013 160.28075,12.43013 160.28075,18.241653 166.42528,18.241653 166.42528,19.713333 156.02684,19.713333 156.02684,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M171.52335,8.5951691 L171.52335,10.625443 C172.4973,9.279088 173.68611,8.6059113 175.08975,8.6059113 176.90877,8.6059113 177.81827,9.5297394 177.81827,11.377396 L177.81827,19.713333 173.89737,19.713333 173.89737,11.764114 C173.89737,10.954869 173.67178,10.550247 173.22061,10.550247 172.76228,10.550247 172.36482,10.870723 172.02823,11.511673 171.69164,12.152624 171.52335,12.909948 171.52335,13.783646 L171.52335,19.713333 167.60245,19.713333 167.60245,8.8637238 C168.94881,8.8637238 170.25577,8.7742052 171.52335,8.5951691 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M185.2424,8.5736847 C187.75607,8.5736847 189.01291,9.7123566 189.01291,11.9897 L187.17599,12.881302 187.19748,11.850052 C187.19748,10.303177 186.67827,9.5297394 185.63986,9.5297394 184.26486,9.5297394 183.57736,11.047969 183.57736,14.084427 183.57736,15.960729 183.72417,17.248001 184.01779,17.946243 184.31142,18.644485 184.85568,18.993607 185.6506,18.993607 187.10439,18.993607 187.83127,18.051874 187.83127,16.168411 187.83127,15.903438 187.7883,15.473749 187.70236,14.879349 L189.35666,15.384232 189.3674,15.824661 C189.3674,18.574661 187.86349,19.949661 184.85568,19.949661 181.28928,19.949661 179.50607,18.141394 179.50607,14.524857 179.50607,12.713007 180.02528,11.268184 181.06369,10.190384 182.1021,9.1125841 183.49501,8.5736847 185.2424,8.5736847 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M194.68935,8.6059113 L194.68935,10.389114 C195.32672,9.2003126 196.10732,8.6059113 197.03114,8.6059113 198.29156,8.6059113 198.92177,9.3005724 198.92177,10.689896 198.92177,11.055177 198.8609,11.474102 198.73915,11.946732 198.69618,12.140113 198.62814,12.430144 198.53505,12.816849 L195.8495,12.816849 C195.9426,12.394323 196.02496,12.0828 196.09657,11.882278 196.19684,11.588658 196.24696,11.323685 196.24696,11.087357 196.24696,10.629024 196.08224,10.399857 195.75282,10.399857 195.50217,10.399861 195.26227,10.702433 195.0331,11.307571 194.80392,11.912714 194.68935,12.551874 194.68935,13.225052 L194.68935,19.713333 190.76845,19.713333 190.76845,8.8852081 191.53114,8.8959503 C192.43349,8.8959503 193.48622,8.7992706 194.68935,8.6059113 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M198.84167,8.8852081 L203.14929,8.8852081 205.32996,15.255325 207.8114,8.8852081 209.2616,8.8852081 204.29871,21.109818 C203.61836,22.785599 202.70171,23.623489 201.54871,23.623489 200.43152,23.623489 199.67241,23.147253 199.27136,22.194778 L200.62488,21.217239 C200.7323,22.040808 201.03667,22.452591 201.53796,22.452591 202.10371,22.452591 202.56206,21.976355 202.91296,21.02388 L203.203,20.250443 198.84167,8.8852081 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M215.23047,10.185013 C214.36394,10.185013 213.93066,11.531367 213.93066,14.224075 213.93066,17.024206 214.34602,18.424271 215.17676,18.424271 215.92155,18.424271 216.29395,17.024206 216.29395,14.224075 216.29395,11.531367 215.93945,10.185013 215.23047,10.185013 z M216.65918,8.6059113 C217.78352,8.6059113 218.6823,9.1197462 219.35547,10.147415 220.02864,11.175084 220.36523,12.551874 220.36523,14.277786 220.36523,18.094843 219.09407,20.003372 216.55176,20.003372 215.50618,20.003372 214.6468,19.609491 213.97363,18.821732 L213.97363,23.376419 210.05273,23.376419 210.05273,8.8959503 C211.16277,8.8959503 212.46973,8.8028517 213.97363,8.6166534 L213.97363,10.249466 C214.71126,9.1537628 215.60645,8.6059113 216.65918,8.6059113 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M226.14522,5.3939972 L226.14522,8.9174347 227.88545,8.9174347 227.88545,10.131302 226.14522,10.131302 226.14522,17.790482 C226.14522,18.2703 226.29919,18.510208 226.60713,18.510208 226.82913,18.510208 226.96162,18.349075 227.00459,18.02681 L228.12178,18.134232 C227.81384,19.265741 226.83272,19.831497 225.17842,19.831497 223.20901,19.831497 222.22432,18.993607 222.22432,17.317825 L222.22432,10.131302 220.91377,10.131302 220.91377,8.9174347 222.22432,8.9174347 222.22432,7.0053253 C223.57784,6.6329298 224.8848,6.0958204 226.14522,5.3939972 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M234.00317,9.5619659 C233.13664,9.5619659 232.70337,11.133906 232.70337,14.277786 232.70337,17.421667 233.13664,18.993607 234.00317,18.993607 234.87688,18.993607 235.31372,17.421667 235.31372,14.277786 235.31372,11.133906 234.87688,9.5619659 234.00317,9.5619659 z M234.01392,8.6059113 C237.59465,8.6059113 239.38501,10.496536 239.38501,14.277786 239.38501,18.059036 237.59465,19.949661 234.01392,19.949661 230.42603,19.949661 228.63208,18.059036 228.63208,14.277786 228.63208,10.496536 230.42603,8.6059113 234.01392,8.6059113 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M244.98134,8.6059113 L244.98134,10.389114 C245.61871,9.2003126 246.39931,8.6059113 247.32314,8.6059113 248.58356,8.6059113 249.21376,9.3005724 249.21376,10.689896 249.21376,11.055177 249.15289,11.474102 249.03114,11.946732 248.98817,12.140113 248.92014,12.430144 248.82704,12.816849 L246.14149,12.816849 C246.23459,12.394323 246.31696,12.0828 246.38857,11.882278 246.48883,11.588658 246.53896,11.323685 246.53896,11.087357 246.53896,10.629024 246.37424,10.399857 246.04482,10.399857 245.79416,10.399861 245.55426,10.702433 245.32509,11.307571 245.09592,11.912714 244.98134,12.551874 244.98134,13.225052 L244.98134,19.713333 241.06044,19.713333 241.06044,8.8852081 241.82314,8.8959503 C242.72548,8.8959503 243.77821,8.7992706 244.98134,8.6059113 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M258.77371,5.0502472 L267.35672,5.0502472 266.79813,8.133255 259.84793,8.133255 259.30008,11.269974 C260.47455,10.475052 261.69202,10.077591 262.95242,10.077591 264.47781,10.077591 265.72928,10.525182 266.70682,11.420364 267.68436,12.315546 268.17313,13.46138 268.17313,14.857864 268.17313,16.419062 267.62347,17.659784 266.5242,18.580032 265.42493,19.50028 263.9407,19.960403 262.07156,19.960403 258.69135,19.960403 257.00125,18.800247 257.00125,16.479935 257.00125,16.143347 257.05139,15.727982 257.15164,15.233841 L259.05301,14.83638 C258.93127,15.42362 258.87039,15.960729 258.87039,16.447708 258.87039,17.908646 259.6474,18.639114 261.20145,18.639114 263.06342,18.639114 263.99442,17.317825 263.99442,14.675247 263.99442,12.806107 263.20306,11.871536 261.62039,11.871536 260.67508,11.871536 259.83362,12.372839 259.09598,13.375443 L257.39871,12.967239 258.77371,5.0502472 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M272.57071,16.136185 C273.83112,16.136185 274.46133,16.766394 274.46133,18.02681 274.46133,19.287226 273.83112,19.917435 272.57071,19.917435 271.3103,19.917435 270.68008,19.287226 270.68008,18.02681 270.68008,16.766394 271.3103,16.136185 272.57071,16.136185 z" FillRule="Nonzero"/>
+                                            <PathGeometry Figures="M282.45062,5.9955597 C281.33344,5.9955597 280.77484,8.1260939 280.77484,12.387161 280.77484,16.64823 281.33344,18.778763 282.45062,18.778763 283.56064,18.778763 284.11566,16.64823 284.11566,12.387161 284.11566,8.1260939 283.56064,5.9955597 282.45062,5.9955597 z M282.45062,4.8246613 C286.53983,4.8246613 288.58441,7.3454943 288.58441,12.387161 288.58441,17.428827 286.53983,19.949661 282.45062,19.949661 278.35428,19.949661 276.30609,17.428827 276.30609,12.387161 276.30609,7.3454943 278.35428,4.8246613 282.45062,4.8246613 z" FillRule="Nonzero"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingGroup>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <Style x:Key="ButtonStyle3" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Label Focusable="True" FontFamily="./Fonts\#Segoe UI" Foreground="#FFFFFFFF" IsTabStop="True" Cursor="Hand" Content="Exit" d:IsStaticText="False" />
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF000000"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF000000"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" OpacityMask="#FF000000" x:Name="contentPresenter" RenderTransformOrigin="0.5,0.5">
+                            <ContentPresenter.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </ContentPresenter.RenderTransform>
+                        </ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy1}" x:Name="Storyboard_Copy1_BeginStoryboard"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderStyle1" TargetType="{x:Type Expander}">
+        <Setter Property="Background" Value="{DynamicResource LightBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" x:Name="ContentRow"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" x:Name="Border" Background="{DynamicResource Brush4}" BorderBrush="{DynamicResource Brush4}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,0,0">
+                            <Border.BitmapEffect>
+                                <OuterGlowBitmapEffect GlowColor="#FF000000" GlowSize="8" Opacity="0.1"/>
+                            </Border.BitmapEffect>
+                            <Grid Height="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton Template="{DynamicResource ToggleButtonControlTemplate1}" IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" OverridesDefaultStyle="True" Foreground="#FFFFFFFF" x:Name="toggleButton" FontSize="14" BorderBrush="{x:Null}">
+                                    <ToggleButton.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF777777" Offset="0"/>
+                                            <GradientStop Color="#FF000000" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </ToggleButton.Background>
+                                </ToggleButton>
+                                <ContentPresenter Grid.Column="1" Margin="4" RecognizesAccessKey="True" ContentSource="Header"/>
+                            </Grid>
+                        </Border>
+                        <Border Visibility="Collapsed" Grid.Row="1" x:Name="ExpandSite" Background="{x:Null}" BorderBrush="#FFF4C00B" BorderThickness="1,0,1,1" CornerRadius="0,0,2,2">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="false" OpacityMask="{x:Null}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ExpandSite"/>
+                            <Setter Property="Background" TargetName="ExpandSite" Value="{x:Null}"/>
+                            <Setter Property="BorderThickness" TargetName="ExpandSite" Value="1,0,1,1"/>
+                            <Setter Property="BorderBrush" TargetName="ExpandSite">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#E5E88828" Offset="0"/>
+                                        <GradientStop Color="#FFB96E00" Offset="1"/>
+                                        <GradientStop Color="#FFDAB11F" Offset="0.509"/>
+                                        <GradientStop Color="#E5E2BD12" Offset="0.491"/>
+                                        <GradientStop Color="#FFE29018" Offset="0.772"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource Brush4}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="BitmapEffect" TargetName="Border">
+                                <Setter.Value>
+                                    <OuterGlowBitmapEffect GlowColor="#FF000000" GlowSize="8" Opacity="0.1"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="BorderBrush" TargetName="toggleButton" Value="{DynamicResource Brush1}"/>
+                            <Setter Property="Foreground" TargetName="toggleButton" Value="#FFFBFBFB"/>
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource Brush4}"/>
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource Brush4}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="Brush1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#E5913131" Offset="0"/>
+        <GradientStop Color="#FF6C0C0C" Offset="1"/>
+        <GradientStop Color="#FF781616" Offset="0.509"/>
+        <GradientStop Color="#E5913131" Offset="0.491"/>
+        <GradientStop Color="#FF660707" Offset="0.772"/>
+    </LinearGradientBrush>
+    <ControlTemplate x:Key="ToggleButtonControlTemplate1" TargetType="{x:Type ToggleButton}">
+        <ControlTemplate.Resources>
+            <Storyboard x:Key="Storyboard1">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFDCDADA"/>
+                    <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFDCDCDC"/>
+                </ColorAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFE0DEDE"/>
+                </ColorAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Storyboard_Copy1">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Storyboard_Copy2">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFDEDEDE"/>
+                    <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#CCF9B805"/>
+                </ColorAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFDCDCDC"/>
+                    <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#CCF9B805"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Storyboard_Copy3"/>
+            <Storyboard x:Key="Storyboard_Copy4">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Down_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#CCF9B805"/>
+                    <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFDEDEDE"/>
+                </ColorAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Up_Arrow" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#CCF9B805"/>
+                    <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFDCDCDC"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+        </ControlTemplate.Resources>
+        <Grid>
+            <Rectangle Margin="0,0,0,0" x:Name="Rectangle" Fill="{DynamicResource Brush4}" Stroke="{DynamicResource Brush4}"/>
+            <Path HorizontalAlignment="Center" x:Name="Up_Arrow" VerticalAlignment="Center" Fill="#FFFFFFFF" Data="M 0 0 L 4 4 L 8 0 Z" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path Visibility="Collapsed" HorizontalAlignment="Center" x:Name="Down_Arrow" VerticalAlignment="Center" Fill="#FFFFFFFF" Data="M 0 4 L 4 0 L 8 4 Z" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy1}" x:Name="Storyboard_Copy1_BeginStoryboard"/>
+                </Trigger.ExitActions>
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                </Trigger.EnterActions>
+                <Setter Property="RenderTransform" TargetName="Up_Arrow">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform X="0" Y="0"/>
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransform" TargetName="Down_Arrow">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform X="0" Y="0"/>
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy4}" x:Name="Storyboard_Copy3_BeginStoryboard"/>
+                </Trigger.ExitActions>
+                <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Storyboard_Copy2}" x:Name="Storyboard_Copy2_BeginStoryboard"/>
+                </Trigger.EnterActions>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter Property="Visibility" Value="Visible" TargetName="Down_Arrow"/>
+                <Setter Property="Visibility" Value="Collapsed" TargetName="Up_Arrow"/>
+                <Setter Property="Fill" TargetName="Up_Arrow" Value="#FF444444"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                <Setter Property="Fill" Value="{DynamicResource DisabledForegroundBrush}" TargetName="Up_Arrow"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="ButtonStyle4" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF470D0D"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF470D0D"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF470D0D"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF470D0D"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard_Copy2">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF470D0D"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF470D0D"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Rectangle Stroke="#FF646464" RadiusX="4.69" RadiusY="4.69" x:Name="rectangle" RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource Brush4}">
+                            <Rectangle.BitmapEffect>
+                                <OuterGlowBitmapEffect GlowColor="#FF000000" Opacity="0.2"/>
+                            </Rectangle.BitmapEffect>
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                            </Trigger.EnterActions>
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#99913131" Offset="0"/>
+                                        <GradientStop Color="#B26C0C0C" Offset="1"/>
+                                        <GradientStop Color="#B2781616" Offset="0.509"/>
+                                        <GradientStop Color="#99913131" Offset="0.491"/>
+                                        <GradientStop Color="#B2660707" Offset="0.772"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#7F913131" Offset="0"/>
+                                        <GradientStop Color="#7F6C0C0C" Offset="1"/>
+                                        <GradientStop Color="#7F781616" Offset="0.509"/>
+                                        <GradientStop Color="#7F913131" Offset="0.491"/>
+                                        <GradientStop Color="#7F660707" Offset="0.772"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RenderTransform" TargetName="rectangle">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource CheckBoxFocusVisual}"/>
+        <Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+
+                    <!-- BulletDecorator is used to provide baseline alignment between the checkmark and the Content -->
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid Width="13" Height="13">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                                <Path x:Name="CheckMark" Stroke="{DynamicResource GlyphBrush}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M 0 0 L 13 13 M 0 13 L 13 0"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" Opacity="1" x:Name="contentPresenter"/>
+                    </BulletDecorator>
+
+                    <!-- This uses Visibility to hide and show the CheckMark on IsChecked -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="CheckMark"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="{DynamicResource MouseOverBrush}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" Value="{DynamicResource PressedBrush}" TargetName="Border"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource PressedBorderBrush}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Border" Value="#FFABABAB"/>
+                            <Setter Property="BorderBrush" TargetName="Border" Value="#FFABABAB"/>
+                            <Setter Property="Opacity" TargetName="contentPresenter" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ProgressBarStyle1" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid Width="457.413" Height="35">
+                        <Grid x:Name="grid">
+
+                            <!-- This Border is the track. It must be named PART_Track -->
+                            <Border x:Name="PART_Track" Background="{DynamicResource PressedBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1" CornerRadius="2"/>
+
+                            <!-- This Border shows progress. It must be named PART_Indicator for the control to function -->
+                            <Border HorizontalAlignment="Left" x:Name="PART_Indicator" Background="{DynamicResource MouseOverBrush}" BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="1" CornerRadius="2"/>
+
+                        </Grid>
+                        <ContentPresenter Margin="184,8,184,8" VerticalAlignment="Center" HorizontalAlignment="Center" Content="value"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="Brush3" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#E5828080" Offset="0"/>
+        <GradientStop Color="#FF000000" Offset="1"/>
+        <GradientStop Color="#FF000000" Offset="0.509"/>
+        <GradientStop Color="#E53B3B3B" Offset="0.491"/>
+        <GradientStop Color="#FF000000" Offset="0.772"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Brush4" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#33828080" Offset="0"/>
+        <GradientStop Color="#4C000000" Offset="1"/>
+        <GradientStop Color="#33000000" Offset="0.509"/>
+        <GradientStop Color="#333B3B3B" Offset="0.491"/>
+        <GradientStop Color="#42000000" Offset="0.772"/>
+    </LinearGradientBrush>
+    <Style x:Key="LabelStyleOuterGlowEffect" BasedOn="{x:Null}" TargetType="{x:Type Label}">
+        <Setter Property="BitmapEffect">
+            <Setter.Value>
+                <OuterGlowBitmapEffect GlowColor="White" GlowSize="10" Opacity="0.7"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ButtonStyle1" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="OnMouseEnter1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#66000000"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#664E4E4E"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33474646"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#337C7B7B"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33858585"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#33BDBDBD"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#338C8C8C"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#33D4D3D3"/>
+                            </ColorAnimationUsingKeyFrames>
+
+                        </Storyboard>
+                        <Storyboard x:Key="OnMouseEnter_Copy1">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#664E4E4E"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#66000000"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#337C7B7B"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#33474646"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33BDBDBD"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#33858585"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33D4D3D3"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#338C8C8C"/>
+                            </ColorAnimationUsingKeyFrames>
+
+                        </Storyboard>
+                        <Storyboard x:Key="OnMouseEnter_Copy2">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#664E4E4E"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#8C000000"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#337C7B7B"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#8C474646"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33BDBDBD"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#8C858585"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#33D4D3D3"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#8C8C8C8C"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="OnMouseEnter_Copy3">
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#8C000000"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#664E4E4E"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#8C474646"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#337C7B7B"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#8C858585"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#33BDBDBD"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <SplineColorKeyFrame KeyTime="00:00:00" Value="#8C8C8C8C"/>
+                                <SplineColorKeyFrame KeyTime="00:00:00.5000000" Value="#33D4D3D3"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Height="Auto" Width="Auto">
+
+
+                        <Rectangle Stroke="#4C000000" RadiusX="7.5" RadiusY="7.5" x:Name="rectangle" >
+                            <Rectangle.BitmapEffect>
+                                <OuterGlowBitmapEffect GlowColor="#33000000"/>
+                            </Rectangle.BitmapEffect>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#33050505" Offset="1"/>
+                                    <GradientStop Color="#338C8C8C" Offset="0"/>
+                                    <GradientStop Color="#33858585" Offset="0.478"/>
+                                    <GradientStop Color="#33050505" Offset="0.531"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter_Copy1}" x:Name="OnMouseEnter_Copy1_BeginStoryboard"/>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter_Copy2}" x:Name="OnMouseEnter_Copy2_BeginStoryboard"/>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter_Copy3}" x:Name="OnMouseEnter_Copy3_BeginStoryboard"/>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+                        </EventTrigger>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle5" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1"/>
+                        <Storyboard x:Key="Storyboard_Copy1"/>
+                        <Storyboard x:Key="Storyboard_Copy2"/>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Rectangle RenderTransformOrigin="0.5,0.5" x:Name="rectangle" Stroke="#FF474747" RadiusX="4.69" RadiusY="4.69">
+                            <Rectangle.BitmapEffect>
+                                <OuterGlowBitmapEffect GlowColor="#FF000000" Opacity="0.2"/>
+                            </Rectangle.BitmapEffect>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#33828080" Offset="0"/>
+                                    <GradientStop Color="#4C000000" Offset="1"/>
+                                    <GradientStop Color="#33000000" Offset="0.509"/>
+                                    <GradientStop Color="#333B3B3B" Offset="0.491"/>
+                                    <GradientStop Color="#42000000" Offset="0.772"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#99913131" Offset="0"/>
+                                        <GradientStop Color="#B26C0C0C" Offset="1"/>
+                                        <GradientStop Color="#B2781616" Offset="0.509"/>
+                                        <GradientStop Color="#99913131" Offset="0.491"/>
+                                        <GradientStop Color="#B2660707" Offset="0.772"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#7F913131" Offset="0"/>
+                                        <GradientStop Color="#7F6C0C0C" Offset="1"/>
+                                        <GradientStop Color="#7F781616" Offset="0.509"/>
+                                        <GradientStop Color="#7F913131" Offset="0.491"/>
+                                        <GradientStop Color="#7F660707" Offset="0.772"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RenderTransform" TargetName="rectangle">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.02" ScaleY="1.02"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="BrushBlack" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#E5828080" Offset="0"/>
+        <GradientStop Color="#FF000000" Offset="1"/>
+        <GradientStop Color="#FF000000" Offset="0.509"/>
+        <GradientStop Color="#E53B3B3B" Offset="0.491"/>
+        <GradientStop Color="#FF000000" Offset="0.772"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BrushListBoxFailedItem" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF94141" Offset="0"/>
+        <GradientStop Color="#FFE03E3E" Offset="1"/>
+        <GradientStop Color="#FFFB1414" Offset="0.476"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BrushListBoxProcessingItem" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF6F78C" Offset="0"/>
+        <GradientStop Color="#FFF6F78C" Offset="1"/>
+        <GradientStop Color="#FFFFF707" Offset="0.526"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BrushListBoxFinishedItem" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFBBFF5A" Offset="0"/>
+        <GradientStop Color="#FFBBFF5A" Offset="1"/>
+        <GradientStop Color="#FF89E20B" Offset="0.5"/>
+    </LinearGradientBrush>
+    <Style x:Key="CheckBoxStyleOuterGlowEffect" BasedOn="{x:Null}" TargetType="{x:Type CheckBox}">
+        <Setter Property="BitmapEffect">
+            <Setter.Value>
+                <OuterGlowBitmapEffect GlowColor="White" GlowSize="15" Opacity="0.7"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- NormalBrush is used as the Background for SimpleButton, SimpleRepeatButton -->
+    
+	<LinearGradientBrush x:Key="NormalBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#EEE" Offset="0.0"/>
+		<GradientStop Color="#CCC" Offset="1.0"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="NormalBorderBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#CCC" Offset="0.0"/>
+		<GradientStop Color="#444" Offset="1.0"/>
+	</LinearGradientBrush>
+	
+	<!-- LightBrush is used for content areas such as Menu, Tab Control background -->
+	<LinearGradientBrush x:Key="LightBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#FFF" Offset="0.0"/>
+		<GradientStop Color="#EEE" Offset="1.0"/>
+	</LinearGradientBrush>
+	
+	<!-- MouseOverBrush is used for MouseOver in Button, Radio Button, CheckBox -->
+	<LinearGradientBrush x:Key="MouseOverBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#FFF" Offset="0.0"/>
+		<GradientStop Color="#AAA" Offset="1.0"/>
+	</LinearGradientBrush>
+	
+	<!-- PressedBrush is used for Pressed in Button, Radio Button, CheckBox -->
+	<LinearGradientBrush x:Key="PressedBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#BBB" Offset="0.0"/>
+		<GradientStop Color="#EEE" Offset="0.1"/>
+		<GradientStop Color="#EEE" Offset="0.9"/>
+		<GradientStop Color="#FFF" Offset="1.0"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="PressedBorderBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#444" Offset="0.0"/>
+		<GradientStop Color="#888" Offset="1.0"/>
+	</LinearGradientBrush>
+
+	<!-- SelectedBackgroundBrush is used for the Selected item in ListBoxItem, ComboBoxItem-->
+	<SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD"/>	
+
+	<!-- Disabled Brushes are used for the Disabled look of each control -->
+	<SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888"/>
+	<SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE"/>
+	<SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA"/>
+
+	<!-- Used for background of ScrollViewer, TreeView, ListBox, Expander, TextBox, Tab Control -->
+	<SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF"/>
+	
+	<!-- DefaultedBorderBrush is used to show KeyBoardFocus -->
+	<LinearGradientBrush x:Key="DefaultedBorderBrush" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#777" Offset="0.0"/>
+		<GradientStop Color="#000" Offset="1.0"/>
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="SolidBorderBrush" Color="#888"/>
+	<SolidColorBrush x:Key="LightBorderBrush" Color="#AAA"/>
+	<SolidColorBrush x:Key="LightColorBrush" Color="#DDD"/>
+	
+	<!-- Used for Checkmark, Radio button, TreeViewItem, Expander ToggleButton glyphs -->
+	<SolidColorBrush x:Key="GlyphBrush" Color="#444"/>
+	
+	
+	<!-- Style and Template pairs are used to define each control Part -->
+	<!-- The Style provides default values on the control; the Template gives the elements for each control -->
+	
+	<!-- SimpleButtonFocusVisual is used to show keyboard focus around a SimpleButton control -->
+	<Style x:Key="SimpleButtonFocusVisual">
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border>
+						<Rectangle Margin="2" Stroke="#60000000" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Button - This control sets brushes on each state. Note that these brushes must be listed above since they are static resources -->
+	<Style x:Key="SimpleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					
+					<!-- We use Grid as a root because it is easy to add more elements to customize the button -->
+					<Grid x:Name="Grid">
+						<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"/>
+						
+						<!-- Content Presenter is where the text content etc is placed by the control -->
+						<!-- The bindings are useful so that the control can be parameterized without editing the template -->
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					
+					<!--Each state sets a brush on the Border in the template -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsKeyboardFocused" Value="true">
+							<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter Property="Background" Value="{DynamicResource MouseOverBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Background" Value="{DynamicResource PressedBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource PressedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<Style x:Key="RadioButtonFocusVisual">
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border>
+						<Rectangle Margin="15,0,0,0" Stroke="#60000000" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<Style x:Key="CheckBoxFocusVisual">
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border>
+						<Rectangle Margin="15,0,0,0" Stroke="#60000000" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple CheckBox -->
+	<Style x:Key="SimpleCheckBox" TargetType="{x:Type CheckBox}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource CheckBoxFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type CheckBox}">
+					
+					<!-- BulletDecorator is used to provide baseline alignment between the checkmark and the Content -->
+					<BulletDecorator Background="Transparent">
+						<BulletDecorator.Bullet>
+							<Grid Width="13" Height="13">
+								<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+								<Path x:Name="CheckMark" Stroke="{DynamicResource GlyphBrush}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M 0 0 L 13 13 M 0 13 L 13 0"/>
+							</Grid>
+						</BulletDecorator.Bullet>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</BulletDecorator>
+					
+					<!-- This uses Visibility to hide and show the CheckMark on IsChecked -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsChecked" Value="false">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="CheckMark"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter Property="Background" Value="{DynamicResource MouseOverBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Background" Value="{DynamicResource PressedBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource PressedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Radio Button -->
+	<Style x:Key="SimpleRadioButton" TargetType="{x:Type RadioButton}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource RadioButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RadioButton}">
+				
+					<!-- BulletDecorator is used to provide baseline alignment between the checkmark and the Content -->
+					<BulletDecorator Background="Transparent">
+						<BulletDecorator.Bullet>
+							<Grid Width="13" Height="13">
+								<Ellipse x:Name="Ellipse_Border" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
+								<Ellipse Margin="4" x:Name="CheckMark" Fill="{DynamicResource GlyphBrush}"/>
+							</Grid>
+						</BulletDecorator.Bullet>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</BulletDecorator>
+					
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsChecked" Value="false">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="CheckMark"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter Property="Fill" Value="{DynamicResource MouseOverBrush}" TargetName="Ellipse_Border"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Fill" Value="{DynamicResource PressedBrush}" TargetName="Ellipse_Border"/>
+							<Setter Property="Stroke" Value="{DynamicResource GlyphBrush}" TargetName="Ellipse_Border"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Fill" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Ellipse_Border"/>
+							<Setter Property="Stroke" Value="#40000000" TargetName="Ellipse_Border"/>
+							<Setter Property="Foreground" Value="#80000000"/>
+						</Trigger>
+						
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Repeat Button - This is used by Simple ScrollBar for the up and down buttons -->
+	<Style x:Key="SimpleRepeatButton" d:IsControlPart="True" TargetType="{x:Type RepeatButton}" BasedOn="{x:Null}">
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RepeatButton}">
+					<Grid>
+						<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+						<ContentPresenter HorizontalAlignment="Center" x:Name="ContentPresenter" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsKeyboardFocused" Value="true">
+							<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter Property="Background" Value="{DynamicResource MouseOverBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Background" Value="{DynamicResource PressedBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource PressedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Thumb - The Thumb is the draggable part of the Scrollbar -->
+	<Style x:Key="SimpleThumbStyle" d:IsControlPart="True" TargetType="{x:Type Thumb}" BasedOn="{x:Null}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Thumb}">
+					<Grid Margin="0,0,0,0" x:Name="Grid">
+						<Rectangle HorizontalAlignment="Stretch" x:Name="Rectangle" VerticalAlignment="Stretch" Width="Auto" Height="Auto" RadiusX="2" RadiusY="2" Fill="{DynamicResource NormalBrush}" Stroke="{DynamicResource NormalBorderBrush}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsEnabled" Value="False"/>
+						<Trigger Property="IsDragging" Value="True"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ScrollRepeatButton Style - This RepeatButton is used above and below the Thumb in the Scrollbar. They are set to transparent si that they do not show over the scrollbar -->
+	<Style x:Key="SimpleScrollRepeatButtonStyle" d:IsControlPart="True" TargetType="{x:Type RepeatButton}">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="IsTabStop" Value="false"/>
+		<Setter Property="Focusable" Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RepeatButton}">
+					<Grid>
+						<Rectangle Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ScrollBar  This makes use of SimpleThumb, SimpleRepeatButton and SimpleScrollRepeatButton -->
+	
+	<Style x:Key="SimpleScrollBar" TargetType="{x:Type ScrollBar}">
+		<Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ScrollBar}">
+					<Grid x:Name="GridRoot" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Background="{TemplateBinding Background}">
+						<Grid.RowDefinitions>
+							<RowDefinition MaxHeight="18"/>
+							<RowDefinition Height="0.00001*"/>
+							<RowDefinition MaxHeight="18"/>
+						</Grid.RowDefinitions>
+						
+						<RepeatButton x:Name="DecreaseRepeat" Style="{DynamicResource SimpleRepeatButton}" Command="ScrollBar.LineUpCommand">
+							<Grid>
+								<Path x:Name="DecreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 4 L 8 4 L 4 0 Z"/>
+							</Grid>
+						</RepeatButton>
+						
+						<!-- Track is a special layout container which sizes the thumb and the repeat button which do jump scrolling either side of it -->
+						<Track Grid.Row="1" x:Name="PART_Track" Orientation="Vertical" IsDirectionReversed="true">
+							<Track.Thumb>
+								<Thumb Style="{DynamicResource SimpleThumbStyle}"/>
+							</Track.Thumb>
+							<Track.IncreaseRepeatButton>
+								<RepeatButton x:Name="PageUp" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageDownCommand"/>
+							</Track.IncreaseRepeatButton>
+							<Track.DecreaseRepeatButton>
+								<RepeatButton x:Name="PageDown" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageUpCommand"/>
+							</Track.DecreaseRepeatButton>
+						</Track>
+						
+						<RepeatButton Grid.Row="2" x:Name="IncreaseRepeat" Style="{DynamicResource SimpleRepeatButton}" Command="ScrollBar.LineDownCommand">
+							<Grid>
+								<Path x:Name="IncreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 0 L 4 4 L 8 0 Z"/>
+							</Grid>
+						</RepeatButton>
+					</Grid>
+					
+					<!-- This uses a single template for ScrollBar and rotate it to be Horizontal
+					It also changes the commands so that the it does Left and Right instead of Up and Down Commands -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="Orientation" Value="Horizontal">
+
+							<!-- Rotate the ScrollBar from Vertical to Horizontal -->
+							<Setter Property="LayoutTransform" TargetName="GridRoot">
+								<Setter.Value>
+									<RotateTransform Angle="-90"/>
+								</Setter.Value>
+							</Setter>
+							
+							<!-- Track is bound to Orientation internally, so we need to rotate it back to Vertical -->
+							<Setter TargetName="PART_Track" Property="Orientation" Value="Vertical"/>
+					
+							<!-- Change the commands to do Horizontal commands -->
+							<Setter Property="Command" Value="ScrollBar.LineLeftCommand" TargetName="DecreaseRepeat"/>
+							<Setter Property="Command" Value="ScrollBar.LineRightCommand" TargetName="IncreaseRepeat"/>
+							<Setter Property="Command" Value="ScrollBar.PageLeftCommand" TargetName="PageDown"/>
+							<Setter Property="Command" Value="ScrollBar.PageRightCommand" TargetName="PageUp"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ScrollViewer 
+	ScrollViewer is a Grid control which has a ContentPresenter and a Horizontal and Vertical ScrollBar 
+	It is used by ListBox, MenuItem, ComboBox, and TreeView -->
+	<Style x:Key="SimpleScrollViewer" TargetType="{x:Type ScrollViewer}" BasedOn="{x:Null}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ScrollViewer}">
+					<Grid Background="{TemplateBinding Background}">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<ScrollContentPresenter Grid.Column="0" Grid.Row="0" Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanContentScroll="{TemplateBinding CanContentScroll}"/>
+						
+						<!-- The visibility of the ScrollBars is controlled by the implementation fo the control -->
+						<ScrollBar Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Grid.Column="0" Grid.Row="1" x:Name="PART_HorizontalScrollBar" Style="{DynamicResource SimpleScrollBar}" Orientation="Horizontal" Value="{Binding Path=HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Minimum="0" Maximum="{TemplateBinding ScrollableWidth}" AutomationProperties.AutomationId="HorizontalScrollBar"/>
+						<ScrollBar Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Grid.Column="1" Grid.Row="0" x:Name="PART_VerticalScrollBar" Style="{DynamicResource SimpleScrollBar}" Orientation="Vertical" Value="{Binding Path=VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Minimum="0" Maximum="{TemplateBinding ScrollableHeight}" AutomationProperties.AutomationId="VerticalScrollBar"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ListBox - This uses SimpleScrollViewer to allow items to be scrolled and SimpleListBoxItem to define the look of each item -->
+	<Style x:Key="SimpleListBox" TargetType="{x:Type ListBox}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource SolidBorderBrush}"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ListBox}">
+					<Grid>
+						<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+						<ScrollViewer Margin="1" Style="{DynamicResource SimpleScrollViewer}" Focusable="false" Background="{TemplateBinding Background}">
+							
+							<!-- The StackPanel is used to display the children by setting IsItemsHost to be Trus -->
+							<StackPanel Margin="2" IsItemsHost="true"/>
+							
+						</ScrollViewer>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsGrouping" Value="true">
+							<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+						</Trigger>
+						
+					</ControlTemplate.Triggers>
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ListBoxItem - This is used for each Item in a ListBox. The item's content is placed in the ContentPresenter -->
+	
+	<Style x:Key="SimpleListBoxItem" d:IsControlPart="True" TargetType="{x:Type ListBoxItem}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="OverridesDefaultStyle" Value="true"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ListBoxItem}">
+					<Grid SnapsToDevicePixels="true">
+						<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						
+						<!-- Change IsSelected SelectedBackgroundBrush to set the selection color for the items -->
+						<Trigger Property="IsSelected" Value="true">
+							<Setter Property="Background" Value="{DynamicResource SelectedBackgroundBrush}" TargetName="Border"/>
+						</Trigger>
+						
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Expander ToggleButton - This Button is used by the Expander control. When it is toggled it switches visibility on the Up_Arrow and Down_Arrow -->
+	<ControlTemplate x:Key="ExpanderToggleButton" TargetType="{x:Type ToggleButton}">
+		<Grid>
+			<Rectangle Margin="0,0,0,0" x:Name="Rectangle" Fill="Transparent" Stroke="{DynamicResource NormalBorderBrush}"/>
+			<Path HorizontalAlignment="Center" x:Name="Up_Arrow" VerticalAlignment="Center" Fill="{DynamicResource GlyphBrush}" Data="M 0 0 L 4 4 L 8 0 Z"/>
+			<Path Visibility="Collapsed" HorizontalAlignment="Center" x:Name="Down_Arrow" VerticalAlignment="Center" Fill="{DynamicResource GlyphBrush}" Data="M 0 4 L 4 0 L 8 4 Z"/>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsMouseOver" Value="true">
+				<Setter Property="Fill" Value="{DynamicResource MouseOverBrush}" TargetName="Rectangle"/>
+			</Trigger>
+			<Trigger Property="IsPressed" Value="true">
+				<Setter Property="Fill" Value="{DynamicResource PressedBrush}" TargetName="Rectangle"/>
+			</Trigger>
+			<Trigger Property="IsChecked" Value="true">
+				<Setter Property="Visibility" Value="Visible" TargetName="Down_Arrow"/>
+				<Setter Property="Visibility" Value="Collapsed" TargetName="Up_Arrow"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Fill" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Rectangle"/>
+				<Setter Property="Stroke" Value="{DynamicResource DisabledBorderBrush}" TargetName="Rectangle"/>
+				<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+				<Setter Property="Fill" Value="{DynamicResource DisabledForegroundBrush}" TargetName="Up_Arrow"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	
+	<!-- Simple Expander 
+	 This uses the Simpler ExpanderToggleButton. It sets Visibility on the ContentPresenter to expand
+	 Limitations : The Simple Expander only expands down -->
+	<Style x:Key="SimpleExpander" TargetType="{x:Type Expander}">
+		<Setter Property="Background" Value="{DynamicResource LightBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Expander}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*" x:Name="ContentRow"/>
+						</Grid.RowDefinitions>
+						<Border Grid.Row="0" x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,0,0">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="20"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<ToggleButton Template="{DynamicResource ExpanderToggleButton}" Background="{DynamicResource NormalBrush}" IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" OverridesDefaultStyle="True"/>
+								<ContentPresenter Grid.Column="1" Margin="4" RecognizesAccessKey="True" ContentSource="Header"/>
+							</Grid>
+						</Border>
+						<Border Visibility="Collapsed" Grid.Row="1" x:Name="ExpandSite" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1,0,1,1" CornerRadius="0,0,2,2">
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="false"/>
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsExpanded" Value="True">
+							<Setter Property="Visibility" Value="Visible" TargetName="ExpandSite"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ComboBox Toggle Button - This is used in ComboBox to expand and collapse the ComboBox Popup-->
+	<ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="20"/>
+			</Grid.ColumnDefinitions>
+			<Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" x:Name="Rectangle" VerticalAlignment="Stretch" Width="Auto" Height="Auto" RadiusX="5" RadiusY="5" Fill="{DynamicResource NormalBrush}" Stroke="{DynamicResource NormalBorderBrush}"/>
+			<Rectangle Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" RadiusX="5" RadiusY="5" Fill="{DynamicResource WindowBackgroundBrush}" Stroke="{DynamicResource NormalBorderBrush}"/>
+			<Path Grid.Column="1" HorizontalAlignment="Center" x:Name="Arrow" VerticalAlignment="Center" Fill="{DynamicResource GlyphBrush}" Data="M 0 0 L 4 4 L 8 0 Z"/>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsMouseOver" Value="true">
+				<Setter Property="Fill" Value="{DynamicResource MouseOverBrush}" TargetName="Rectangle"/>
+			</Trigger>
+			<Trigger Property="IsChecked" Value="true">
+				<Setter Property="Fill" Value="{DynamicResource PressedBrush}" TargetName="Rectangle"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Fill" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Rectangle"/>
+				<Setter Property="Stroke" Value="{DynamicResource DisabledBorderBrush}" TargetName="Rectangle"/>
+				<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+				<Setter Property="Fill" Value="{DynamicResource DisabledForegroundBrush}" TargetName="Arrow"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	
+	<!-- This is the area which contains the selected item in the ComboBox -->
+	
+	<ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+		<!-- This must be named as PART_ContentHost -->
+		<Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}"/>
+	</ControlTemplate>
+	
+	<!-- Simple ComboBox 
+	This uses the ComboBoxToggleButton to expand and collapse a Popup control
+	SimpleScrollViewer to allow items to be scrolled and SimpleComboBoxItem to define the look of each item 
+	The Popup shows a list of items in a StackPanel-->
+	
+	<Style x:Key="SimpleComboBox" TargetType="{x:Type ComboBox}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ComboBox}">
+					<Grid>
+						<!-- The ToggleButton is databound to the ComboBox itself to toggle IsDropDownOpen -->
+						<ToggleButton Grid.Column="2" Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+						<ContentPresenter HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="ContentSite" VerticalAlignment="Center" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False"/>
+						
+						<!-- The TextBox must be named PART_EditableTextBox or ComboBox will not recognize it -->
+						<TextBox Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" Focusable="True" Background="Transparent" IsReadOnly="{TemplateBinding IsReadOnly}"/>
+						
+						<!-- The Popup shows the list of items in the ComboBox. IsOpen is databound to IsDropDownOpen which is toggled via the ComboBoxToggleButton -->
+						<Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+							<Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+								<Border x:Name="DropDownBorder" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1"/>
+								<ScrollViewer Margin="4,6,4,6" Style="{DynamicResource SimpleScrollViewer}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+							
+									<!-- The StackPanel is used to display the children by setting IsItemsHost to be True -->
+									<StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+								
+								</ScrollViewer>
+							</Grid>
+						</Popup>
+					</Grid>
+					<ControlTemplate.Triggers>						
+						<!-- This forces the DropDown to have a minimum size if it is empty -->
+						<Trigger Property="HasItems" Value="false">
+							<Setter Property="MinHeight" Value="95" TargetName="DropDownBorder"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+						<Trigger Property="IsGrouping" Value="true">
+							<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+						</Trigger>
+						<Trigger Property="AllowsTransparency" SourceName="Popup" Value="true">
+							<Setter Property="CornerRadius" Value="4" TargetName="DropDownBorder"/>
+							<Setter Property="Margin" Value="0,2,0,0" TargetName="DropDownBorder"/>
+						</Trigger>
+						<Trigger Property="IsEditable" Value="true">
+							<Setter Property="IsTabStop" Value="false"/>
+							<Setter Property="Visibility" Value="Visible" TargetName="PART_EditableTextBox"/>
+							<Setter Property="Visibility" Value="Hidden" TargetName="ContentSite"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple ComboBoxItem - This is used for each item inside of the ComboBox. You can change the selected color of each item below-->
+	<Style x:Key="SimpleComboBoxItem" d:IsControlPart="True" TargetType="{x:Type ComboBoxItem}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ComboBoxItem}">
+					<Grid SnapsToDevicePixels="true">
+						<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+					
+						<!-- Change IsHighlighted SelectedBackgroundBrush to set the selection color for the items -->
+						<Trigger Property="IsHighlighted" Value="true">
+							<Setter Property="Background" Value="{DynamicResource SelectedBackgroundBrush}" TargetName="Border"/>
+						</Trigger>
+						
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple SimpleProgressBar
+	 The template uses two Border controls to show the Track and Progress 
+	 Limitations : It only supports a horizontal orientated ProgressBar -->
+	<Style x:Key="SimpleProgressBar" TargetType="{x:Type ProgressBar}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ProgressBar}">
+					<Grid>
+                        <Grid.Resources>
+                            <local:ProgressBarValueConverter x:Key="ValueConverter"/>
+                        </Grid.Resources>
+                            <!-- This Border is the track. It must be named PART_Track -->
+						<Border x:Name="PART_Track" Background="{DynamicResource PressedBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1" CornerRadius="2"/>
+						<Grid HorizontalAlignment="Left" x:Name="PART_Indicator" Width="300">
+							<Grid.Background>
+	
+								<!-- MouseOverBrush is used for MouseOver in Button, Radio Button, CheckBox -->
+								<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+									<GradientStop Color="#FF14C706" Offset="0.0"/>
+									<GradientStop Color="#FF14C706" Offset="1.0"/>
+									<GradientStop Color="#FF4CF23F" Offset="0.509"/>
+								</LinearGradientBrush>
+	
+							</Grid.Background>
+						</Grid>
+						<TextBlock Margin="0" TextWrapping="Wrap" Text="{TemplateBinding Value, Converter={StaticResource ValueConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+						
+						<!-- This Border shows progress. It must be named PART_Indicator for the control to function -->
+					
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple TextBox -->
+	<Style x:Key="SimpleTextBox" TargetType="{x:Type TextBox}">
+		<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="AllowDrop" Value="true"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBox}">
+					<Grid>
+						<Border x:Name="Border" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1" Padding="2" CornerRadius="2">
+							
+							<!-- The implementation places the Content into the ScrollViewer. It must be named PART_ContentHost for the control to function -->
+							<ScrollViewer Margin="0" x:Name="PART_ContentHost" Style="{DynamicResource SimpleScrollViewer}" Background="{TemplateBinding Background}"/>
+						
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Label - This template is just a ContentPresenter that shows the content of the Label -->
+	<Style x:Key="SimpleLabel" TargetType="{x:Type Label}">
+		<Setter Property="HorizontalContentAlignment" Value="Left"/>
+		<Setter Property="VerticalContentAlignment" Value="Top"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Label}">
+					<Grid>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="false"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Menu - This template uses a StackPanel to layout MenuItems --> 
+	<Style x:Key="SimpleMenu" TargetType="{x:Type Menu}">
+		<Setter Property="Background" Value="{DynamicResource LightBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Menu}">
+					<Grid>
+						<Border Margin="1" x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+						<StackPanel Background="{TemplateBinding Background}" IsItemsHost="True" ClipToBounds="True" Orientation="Horizontal"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- This BitmapEffect is used by the Simple MenuItem -->
+	<DropShadowBitmapEffect x:Key="PopupDropShadow" ShadowDepth="1.5" Softness="0.15"/>
+	
+	<!-- Simple MenuItem - The template uses triggers to provide four different arrangements of menu item which are set via the Role property --> 
+	<Style x:Key="SimpleMenuItem" TargetType="{x:Type MenuItem}">
+		<Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type MenuItem}">
+					<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+						<Grid>
+							
+							<!-- The Grid is used to hold together columns for an Icon, Content, Glyph checkmark and Arrow to show the next level
+							 Size sharing is used in Grid so that the Icon, Content, Arrow for each MenuItem align together -->
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition MinWidth="17" Width="Auto" SharedSizeGroup="MenuItemIconColumnGroup"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGTColumnGroup"/>
+								<ColumnDefinition Width="14"/>
+							</Grid.ColumnDefinitions>
+							
+							<!-- ContentPresenter to show an Icon if needed -->
+							<ContentPresenter Margin="4,0,6,0" x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon"/>
+							
+							<!-- Glyph is a checkmark if needed for a checkable menu -->
+							<Grid Visibility="Hidden" Margin="4,0,6,0" x:Name="GlyphPanel" VerticalAlignment="Center">
+								<Path x:Name="GlyphPanelpath" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,2 L0,4.8 L2.5,7.4 L7.1,2.8 L7.1,0 L2.5,4.6 z" FlowDirection="LeftToRight"/>
+							</Grid>
+							
+							<!-- Content for the menu text etc -->
+							<ContentPresenter Grid.Column="1" Margin="{TemplateBinding Padding}" x:Name="HeaderHost" RecognizesAccessKey="True" ContentSource="Header"/>
+							
+							<!-- Arrow drawn path which points to the next level of the menu -->
+							<Grid Grid.Column="3" Margin="4,0,6,0" x:Name="ArrowPanel" VerticalAlignment="Center">
+								<Path x:Name="ArrowPanelPath" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,0 L0,8 L4,4 z"/>
+							</Grid>
+							
+							<!-- The Popup is the body of the menu which expands down or across depending on the level of the item -->
+							<Popup IsOpen="{Binding Path=IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" x:Name="SubMenuPopup" Focusable="false" AllowsTransparency="true" PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" VerticalOffset="-3">
+								<Grid x:Name="SubMenu">
+									<Border x:Name="SubMenuBorder" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1"/>
+									
+									<!-- StackPanel holds children of the menu. This is set bu IsItemsHost=True -->
+									<StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/>
+								</Grid>
+							</Popup>
+							
+						</Grid>
+					</Border>
+					
+					<!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+					<ControlTemplate.Triggers>
+					
+						<!-- Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down -->
+						<Trigger Property="Role" Value="TopLevelHeader">
+							<Setter Property="Margin" Value="0,1,0,1"/>
+							<Setter Property="Padding" Value="6,3,6,3"/>
+							<Setter Property="Grid.IsSharedSizeScope" Value="true"/>
+							<Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+							<Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+						</Trigger>
+						
+						<!-- Role = TopLevelItem :  this is a child menu item from the top level without any child items-->
+						<Trigger Property="Role" Value="TopLevelItem">
+							<Setter Property="Margin" Value="0,1,0,1"/>
+							<Setter Property="Padding" Value="6,3,6,3"/>
+							<Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+						</Trigger>
+						
+						<!-- Role = SubMenuHeader : this is a child menu item which does not have children -->
+						<Trigger Property="Role" Value="SubmenuHeader">
+							<Setter Property="DockPanel.Dock" Value="Top"/>
+							<Setter Property="Padding" Value="0,2,0,2"/>
+							<Setter Property="Grid.IsSharedSizeScope" Value="true"/>
+						</Trigger>
+						
+						<!-- Role = SubMenuItem : this is a child menu item which has children-->
+						<Trigger Property="Role" Value="SubmenuItem">
+							<Setter Property="DockPanel.Dock" Value="Top"/>
+							<Setter Property="Padding" Value="0,2,0,2"/>
+							<Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+						</Trigger>
+						<Trigger Property="IsSuspendingPopupAnimation" Value="true">
+							<Setter Property="PopupAnimation" Value="None" TargetName="SubMenuPopup"/>
+						</Trigger>
+						
+						<!-- If no Icon is present the we collapse the Icon Content -->
+						<Trigger Property="Icon" Value="{x:Null}">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="Icon"/>
+						</Trigger>
+						
+						<!-- The GlyphPanel contains the CheckMark -->
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="Visibility" Value="Visible" TargetName="GlyphPanel"/>
+							<Setter Property="Visibility" Value="Collapsed" TargetName="Icon"/>
+						</Trigger>
+						
+						<Trigger Property="AllowsTransparency" SourceName="SubMenuPopup" Value="true">
+							<Setter Property="Margin" Value="0,0,3,3" TargetName="SubMenu"/>
+							<Setter Property="SnapsToDevicePixels" Value="true" TargetName="SubMenu"/>
+							<Setter Property="BitmapEffect" Value="{DynamicResource PopupDropShadow}" TargetName="SubMenuBorder"/>
+						</Trigger>
+						
+						<!-- Using the system colors for the Menu Highlight and IsEnabled-->
+						<Trigger Property="IsHighlighted" Value="true">
+							<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!-- Simple Separator - This template is used for a Separator in a menu --> 
+	<Style x:Key="SimpleSeparator" TargetType="{x:Type Separator}">
+		<Setter Property="Height" Value="1"/>
+		<Setter Property="Margin" Value="0,2,0,2"/>
+		<Setter Property="Focusable" Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Separator}">
+					<Border BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!-- Simple TabControl 
+	This template uses Simple TabItem for each Tab. The TabItems are placed in the TabPanel
+	Limitations : The Simple TabControl only allow the Tabs to be shown at the top of the Tab control. You can re-position the TabPanel to change this-->
+	
+	<Style x:Key="SimpleTabControl" TargetType="{x:Type TabControl}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TabControl}">
+					<Grid KeyboardNavigation.TabNavigation="Local">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						
+						<!-- TabPanel is a layout container which allows the TabItems to wrap and re-order when selected
+						The implementation knows to use this control because it is marked IsItemsHost = True -->
+						<TabPanel Grid.Row="0" Margin="0,0,4,-1" x:Name="HeaderPanel" Background="Transparent" IsItemsHost="True" Panel.ZIndex="1" KeyboardNavigation.TabIndex="1"/>
+						
+						<Border Grid.Row="1" x:Name="Border" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1" CornerRadius="2" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.TabIndex="2">
+							
+							<!-- The implementation switches the content. This control must be named PART_SelectedContentHost -->
+							<ContentPresenter Margin="4" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+							
+						</Border>
+					</Grid>
+					
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple TabItem -->
+	<Style x:Key="SimpleTabItem" d:IsControlPart="True" TargetType="{x:Type TabItem}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TabItem}">
+					<Grid>
+						<Border Margin="0,0,-4,0" x:Name="Border" Background="{DynamicResource LightBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1,1,1,1" CornerRadius="2,12,0,0">
+							<ContentPresenter HorizontalAlignment="Center" Margin="12,2,12,2" x:Name="ContentSite" VerticalAlignment="Center" RecognizesAccessKey="True" ContentSource="Header"/>
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsSelected" Value="True">
+							<Setter Property="Panel.ZIndex" Value="100"/>
+							<Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderThickness" Value="1,1,1,0" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple Simple SliderThumb - The Thumb is the draggable part of a Slider-->
+	<Style x:Key="SimpleSliderThumb" d:IsControlPart="True" TargetType="{x:Type Thumb}">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="Height" Value="14"/>
+		<Setter Property="Width" Value="14"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Thumb}">
+					<Grid>
+						<Ellipse x:Name="Ellipse" Fill="{DynamicResource NormalBrush}" Stroke="{DynamicResource NormalBorderBrush}" StrokeThickness="1"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Fill" Value="{DynamicResource MouseOverBrush}" TargetName="Ellipse"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Fill" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Ellipse"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple Simple Slider
+	Similiar to ScrollBar this template uses Track to layout the draggable Thumb which has an up and down repeat button
+	It uses Simple SliderThumb and SimpleScrollRepeatButtonStyle for the page up and down repeat buttons -->
+	<Style x:Key="SimpleSlider" TargetType="{x:Type Slider}">
+		<Setter Property="Background" Value="{DynamicResource LightBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Slider}">
+					<Grid x:Name="GridRoot">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<!-- TickBar shows the ticks for Slider -->
+						<TickBar Visibility="Collapsed" x:Name="TopTick" Height="4" SnapsToDevicePixels="True" Placement="Top" Fill="{DynamicResource GlyphBrush}"/>
+						<Border Grid.Row="1" Margin="0" x:Name="Border" Height="4" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+						
+						<!-- The Track lays out the repeat buttons and thumb -->
+						<Track Grid.Row="1" x:Name="PART_Track">
+							<Track.Thumb>
+								<Thumb Style="{DynamicResource SimpleSliderThumb}"/>
+							</Track.Thumb>
+							<Track.IncreaseRepeatButton>
+								<RepeatButton Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="Slider.IncreaseLarge"/>
+							</Track.IncreaseRepeatButton>
+							<Track.DecreaseRepeatButton>
+								<RepeatButton Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="Slider.DecreaseLarge"/>
+							</Track.DecreaseRepeatButton>
+						</Track>
+						
+						<TickBar Visibility="Collapsed" Grid.Row="2" x:Name="BottomTick" Height="4" SnapsToDevicePixels="True" Placement="Bottom" Fill="{TemplateBinding Foreground}"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="TickPlacement" Value="TopLeft">
+							<Setter Property="Visibility" Value="Visible" TargetName="TopTick"/>
+						</Trigger>
+						<Trigger Property="TickPlacement" Value="BottomRight">
+							<Setter Property="Visibility" Value="Visible" TargetName="BottomTick"/>
+						</Trigger>
+						<Trigger Property="TickPlacement" Value="Both">
+							<Setter Property="Visibility" Value="Visible" TargetName="TopTick"/>
+							<Setter Property="Visibility" Value="Visible" TargetName="BottomTick"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						
+						<!-- Use a rotation to create a Vertical Slider form the default Horizontal -->
+						<Trigger Property="Orientation" Value="Vertical">
+							<Setter Property="LayoutTransform" TargetName="GridRoot">
+								<Setter.Value>
+									<RotateTransform Angle="-90"/>
+								</Setter.Value>
+							</Setter>
+							<!-- Track rotates itself based on orientation so need to force it back -->
+							<Setter TargetName="PART_Track" Property="Orientation" Value="Horizontal"/>
+						</Trigger>
+						
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple Tree View - This lays out TreeViewItems within a ScrollViewer -->
+	<Style x:Key="SimpleTreeView" TargetType="{x:Type TreeView}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TreeView}">
+					<Grid>
+						<Border x:Name="Border" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1" CornerRadius="1">
+							<ScrollViewer Style="{DynamicResource SimpleScrollViewer}" Focusable="False" Background="{TemplateBinding Background}" Padding="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="False">
+								<ItemsPresenter/>
+							</ScrollViewer>
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple TreeViewItem ToggleButton - + and - button to expand and collapse a TreeViewItem -->
+	<Style x:Key="SimpleTreeViewItemToggleButton" d:IsControlPart="True" TargetType="{x:Type ToggleButton}">
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid Width="15" Height="13" Background="Transparent">
+						<Path Visibility="Collapsed" HorizontalAlignment="Left" Margin="1,1,1,1" x:Name="IsExpandedPath" VerticalAlignment="Center" Fill="{DynamicResource GlyphBrush}" Data="M 0 4 L 8 4 L 4 8 Z"/>
+						<Path HorizontalAlignment="Left" Margin="1,1,1,1" x:Name="ExpandPath" VerticalAlignment="Center" Fill="{DynamicResource GlyphBrush}" Data="M 4 0 L 8 4 L 4 8 Z"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Visibility" Value="Visible" TargetName="IsExpandedPath"/>
+							<Setter Property="Visibility" Value="Collapsed" TargetName="ExpandPath"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<!--Simple TreeViewItem - The TreeViewItem template has a header which shows the Item and a Body which is an ItemsHost control which expands to show child items-->
+	<Style x:Key="SimpleTreeViewItem" d:IsControlPart="True" TargetType="{x:Type TreeViewItem}">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="Padding" Value="1,0,0,0"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TreeViewItem}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition MinWidth="19" Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<ToggleButton x:Name="Expander" Style="{DynamicResource SimpleTreeViewItemToggleButton}" IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+						<Border Grid.Column="1" x:Name="Selection_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_Header" ContentSource="Header"/>
+						</Border>
+						<ItemsPresenter Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" x:Name="ItemsHost"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsExpanded" Value="false">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="ItemsHost"/>
+						</Trigger>
+						<Trigger Property="HasItems" Value="false">
+							<Setter Property="Visibility" Value="Hidden" TargetName="Expander"/>
+						</Trigger>
+						<Trigger Property="IsSelected" Value="true">
+							<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" TargetName="Selection_Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+						</Trigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="IsSelected" Value="true"/>
+								<Condition Property="IsSelectionActive" Value="false"/>
+							</MultiTrigger.Conditions>
+							<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Selection_Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+						</MultiTrigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--<ControlTemplate x:Key="LabelStyleOuterGlow" TargetType="{x:Type Label}">
+		<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True" Background="Transparent">
+            <Border.BitmapEffect>
+                <OuterGlowBitmapEffect GlowSize="5" GlowColor="White"/>
+            </Border.BitmapEffect>
+            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+		</Border>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>-->
+</ResourceDictionary>

@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="BeRMOoDA.WPF.FileEncryptor.Views.MainContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:project="clr-namespace:BeRMOoDA.WPF.FileEncryptor"
+             mc:Ignorable="d"
+             >
+    <UserControl.Resources>
+        <project:XamlNotOperatorConverter x:Key="NotOperatorConverter"/>
+        <project:ElapsedTimeConverter x:Key="ElapsedTimeConverter"/>
+       
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.924*"/>
+            <RowDefinition Height="0.076*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="12,8,8,8" Background="{x:Null}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding Height, ElementName=expanderEncrypt, Mode=Default}"/>
+                <RowDefinition Height="524"/>
+            </Grid.RowDefinitions>
+            <Expander IsExpanded="{Binding ElementName=expanderDecrypt, Path=IsExpanded, Converter={StaticResource NotOperatorConverter}}" FontSize="14" FontWeight="Normal" Style="{DynamicResource ExpanderStyle1}" Width="Auto" Height="Auto" Header="Encrypt" x:Name="expanderEncrypt" Margin="5,5,5,7.38" BorderThickness="0,1,1,1" Foreground="#FFFFFFFF" AllowDrop="True" d:LayoutOverrides="Height">
+                <Expander.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFCCCCCC" Offset="0"/>
+                        <GradientStop Color="#FF959393" Offset="1"/>
+                    </LinearGradientBrush>
+                </Expander.BorderBrush>
+                <Grid Width="Auto" Height="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.287*"/>
+                        <RowDefinition Height="0.463*"/>
+                        <RowDefinition Height="44"/>
+                        <RowDefinition Height="0.25*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Margin="8,8,8,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.237*"/>
+                            <ColumnDefinition Width="{Binding Width, ElementName=label, Mode=Default}"/>
+                            <ColumnDefinition Width="0.535*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.487*"/>
+                            <RowDefinition Height="0.513*"/>
+                        </Grid.RowDefinitions>
+                        <Label Width="Auto" Height="Auto" Content="Enter password :" FontSize="12" Foreground="Black" Margin="2,12,18.08,12.42" Grid.Column="1" d:LayoutOverrides="Height" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <PasswordBox project:PasswordHelper.Attach="True"  project:PasswordHelper.Password="{Binding EncryptionPassword, Mode=OneWayToSource}" Height="Auto" FontSize="12" x:Name="passwordBoxEnter" Margin="8,0" Grid.Column="2" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+                        <Label x:Name="label" FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Confirm password :" Margin="2,11.04,2,16" Grid.Column="1" Grid.Row="1" d:LayoutOverrides="Height" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <PasswordBox project:PasswordHelper.Attach="True" project:PasswordHelper.Password="{Binding EncryptionPasswordConfirm, Mode=OneWayToSource}" FontSize="12" Height="Auto" x:Name="passwordBoxConfirm" Margin="8,0" Grid.Column="2" Grid.Row="1" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+                        <StackPanel Margin="0,8,9.124,8" Width="Auto" Grid.RowSpan="2">
+                            <Button Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Content="Add file(s)" FontSize="12" FontWeight="Normal" Margin="1,4,1,4" Command="{Binding AddFiles2EncryptCommand}" MinHeight="40"/>
+                            <Button Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Content="Add folder(s)" FontSize="12" FontWeight="Normal" Margin="1,4,1,4" Command="{Binding AddFolders2EncryptCommand}" x:Name="buttonAddFolders" MinHeight="40" />
+                        </StackPanel>
+                    </Grid>
+                    <Border CornerRadius="5" Margin="10,18.58,60.601,4.8" Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Background="White">
+                        <ListBox BorderBrush="Transparent" Background="Transparent" SelectedItem="{Binding EncryptionListSelectedItem, Mode=OneWayToSource}" ItemsSource="{Binding FilesToEncrypt}" Margin="5" IsSynchronizedWithCurrentItem="True"  Style="{DynamicResource SimpleListBox}" FontSize="10" MinHeight="160"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MaxHeight="160">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="1">
+                                        <Border Margin="2" Padding="4" CornerRadius="4" Background="{Binding Status}" BorderBrush="LightGray">
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </Border>
+                                        <!--<TextBlock Text=" | "/>-->
+                                        <Border Margin="2" Padding="4" CornerRadius="4" Background="{Binding Status}" BorderBrush="LightGray">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Size}" FontWeight="Bold"/>
+                                                <TextBlock FontWeight="Bold" Text=" KB"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                    </StackPanel>
+                                </DataTemplate>
+								
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Border>
+                    <Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Added files :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,-3.38,0,0" Grid.Row="1" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                    <Button Command="{Binding EncryptCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Height="26" FontSize="12" FontWeight="Normal" VerticalAlignment="Top" Margin="10,6.2,17,0"  Content="E N C R Y P T" x:Name="buttonEncrypt" Grid.Row="3" />
+                    <Grid Margin="10,44.04,19,34.38" x:Name="progressBarCurrentGrid" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.117*"/>
+                            <ColumnDefinition Width="0.883*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Current :" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Left" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <!--<Label Margin="0" Style="{DynamicResource SimpleLabel}" Height="Auto" Content="{Binding Value, ElementName=progressBarCurrent, Mode=OneWay}" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="labelProgressBarCurrentValue" FontSize="11" Grid.Column="1"/>-->
+                        <ProgressBar x:Name="progressBarCurrent" Value="{Binding CurrnetFileEncryptionProgress}" Margin="0" Style="{DynamicResource SimpleProgressBar}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+                    </Grid>
+                    <Grid Margin="10,0,19,3.76" Height="26.62" VerticalAlignment="Bottom" x:Name="progressBarTotalGrid" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.117*"/>
+                            <ColumnDefinition Width="0.883*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Total :" VerticalAlignment="Center" Margin="0,0,18.808,0" d:LayoutOverrides="Width" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <!--<Label Margin="0,0,0.001,0" Style="{DynamicResource SimpleLabel}" Height="Auto" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="labelProgressBarTotalValue" FontSize="11" Grid.Column="1"/>-->
+                        <ProgressBar x:Name="progressBarTotal" Value="{Binding TotalEncryptionProgress}" Margin="0" Style="{DynamicResource SimpleProgressBar}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" d:LayoutOverrides="GridBox"/>
+                    </Grid>
+                    <Button Command="{Binding RemoveEncryptionItemsCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" FontSize="12" FontWeight="Normal" Margin="0,0,19,7.8"   HorizontalAlignment="Right" Width="37.601" x:Name="buttonRemove" ToolTip="Remove selected file" Grid.Row="1" Height="30.92" VerticalAlignment="Bottom">
+                        <Image Width="24" Height="24" Source="/BeRMOoDA.WPF.FileEncryptor;component/Images/Delete.png" Stretch="Fill"/>
+                    </Button>
+                    <Button Command="{Binding ClearEncryptionItemsCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" FontSize="12" FontWeight="Normal" Margin="0,0,19,42.72"   HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="37.601" Height="30.92" x:Name="buttonNew" ToolTip="Clear llist" Grid.Row="1">
+                        <Image Width="24" Height="24" Source="/BeRMOoDA.WPF.FileEncryptor;component/Images/file.png" Stretch="Fill"/>
+                    </Button>
+                    <StackPanel Margin="10,0,60.601,0" Orientation="Horizontal" Grid.Row="2">
+                        <CheckBox FontSize="12" Foreground="Black" x:Name="checkBoxOnTheFlyEncryption" Style="{DynamicResource CheckBoxStyleOuterGlowEffect}" Height="Auto" Content=" On the fly encryption" IsChecked="False" IsEnabled="True" Margin="15,10,10,10" VerticalAlignment="Center" />
+                        <Label x:Name="labelRemaningEncrypt_Copy" Content="Elapsed Time:" FontSize="12" Foreground="Black" Style="{DynamicResource LabelStyleOuterGlowEffect}" Padding="0" Margin="10,10,3,10" Background="{x:Null}" VerticalAlignment="Center"/>
+                        <Label Content="{Binding EncryptionElapsedTime, Converter={StaticResource ElapsedTimeConverter}}" Margin="3,10,10,10" Style="{DynamicResource LabelStyleOuterGlowEffect}" MinWidth="50" Padding="0" FontSize="12" VerticalAlignment="Center"/>
+                        <Label x:Name="labelRemaningEncrypt" Content="Remaning Time:" FontSize="12" Foreground="Black" Padding="0" Style="{DynamicResource LabelStyleOuterGlowEffect}" Margin="5,10,3,10" VerticalAlignment="Center"/>
+                        <Label Content="{Binding EncryptionRemainingTime, Converter={StaticResource ElapsedTimeConverter}}" Style="{DynamicResource LabelStyleOuterGlowEffect}" MinWidth="50" Margin="3" FontSize="12" Padding="0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Expander>
+            <Expander AllowDrop="True" FontSize="14" FontWeight="Normal" Style="{DynamicResource ExpanderStyle1}" Header="Decrypt" Width="Auto" x:Name="expanderDecrypt" Margin="5,7.47,5,0" Foreground="#FFFFFFFF" VerticalAlignment="Top" Grid.Row="1" d:LayoutOverrides="VerticalAlignment">
+            	<Grid Width="Auto" Height="Auto">
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="0.287*"/>
+            			<RowDefinition Height="0.463*"/>
+            			<RowDefinition Height="44"/>
+            			<RowDefinition Height="0.25*"/>
+            		</Grid.RowDefinitions>
+            		<Grid Margin="8,8,8,1">
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition Width="0.237*"/>
+            				<ColumnDefinition Width="{Binding Width, ElementName=label, Mode=Default}"/>
+            				<ColumnDefinition Width="0.535*"/>
+            			</Grid.ColumnDefinitions>
+            			<Grid.RowDefinitions>
+            				<RowDefinition Height="0.487*"/>
+            				<RowDefinition Height="0.513*"/>
+            			</Grid.RowDefinitions>
+            			<Label Width="Auto" Height="Auto" Content="Enter password :" FontSize="12" Foreground="Black" Margin="2,12,18.08,12.42" Grid.Column="1" d:LayoutOverrides="Height" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+            			<PasswordBox project:PasswordHelper.Attach="True"  project:PasswordHelper.Password="{Binding DecryptionPassword, Mode=OneWayToSource}" Height="Auto" FontSize="12" x:Name="passwordBoxEnter1" Margin="8,0" Grid.Column="2" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+            			<StackPanel Margin="0,8,9.124,8" Width="Auto" Grid.RowSpan="2">
+            				<Button Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Content="Add file(s)" FontSize="12" FontWeight="Normal" Margin="1,4,1,4" Command="{Binding AddFiles2DecryptCommand}" MinHeight="40"/>
+            				<Button Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Content="Add folder(s)" FontSize="12" FontWeight="Normal" Margin="1,4,1,4" Command="{Binding AddFolders2DecryptCommand}" x:Name="buttonAddFolders1" MinHeight="40" />
+            			</StackPanel>
+            		</Grid>
+            		<Border CornerRadius="5" Margin="10,18.58,60.601,4.8" Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Background="White">
+            			<ListBox BorderBrush="Transparent" Background="Transparent" SelectedItem="{Binding DecryptionListSelectedItem, Mode=OneWayToSource}" ItemsSource="{Binding FilesToDecrypt}" Margin="5" IsSynchronizedWithCurrentItem="True"  Style="{DynamicResource SimpleListBox}" FontSize="10" MinHeight="160"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MaxHeight="160">
+            				<ListBox.ItemTemplate>
+            					<DataTemplate>
+            						<StackPanel Orientation="Horizontal" Margin="1">
+            							<Border Margin="2" Padding="4" CornerRadius="4" Background="{Binding Status}" BorderBrush="LightGray">
+            								<TextBlock Text="{Binding Name}"/>
+            							</Border>
+                                        <!--<TextBlock Text=" | "/>-->
+            							<Border Margin="2" Padding="4" CornerRadius="4" Background="{Binding Status}" BorderBrush="LightGray">
+            								<StackPanel Orientation="Horizontal">
+            									<TextBlock Text="{Binding Size}" FontWeight="Bold"/>
+            									<TextBlock FontWeight="Bold" Text=" KB"/>
+            								</StackPanel>
+            							</Border>
+
+            						</StackPanel>
+            					</DataTemplate>
+            				</ListBox.ItemTemplate>
+            			</ListBox>
+            		</Border>
+            		<Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Added files :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,-3.38,0,0" Grid.Row="1" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+            		<Button Command="{Binding DecryptCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" Height="26" FontSize="12" FontWeight="Normal" VerticalAlignment="Top" Margin="10,6.2,17,0"  Content="D E C R Y P T" x:Name="buttonEncrypt1" Grid.Row="3" />
+            		<Grid Margin="10,44.04,19,34.38" x:Name="progressBarCurrentGrid1" Grid.Row="3">
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition Width="0.117*"/>
+            				<ColumnDefinition Width="0.883*"/>
+            			</Grid.ColumnDefinitions>
+            			<Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Current :" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Left" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <!--<Label Margin="0" Style="{DynamicResource SimpleLabel}" Height="Auto" Content="{Binding Value, ElementName=progressBarCurrent, Mode=OneWay}" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="labelProgressBarCurrentValue" FontSize="11" Grid.Column="1"/>-->
+            			<ProgressBar x:Name="progressBarCurrent1" Value="{Binding CurrnetFileDecryptionProgress}" Margin="0" Style="{DynamicResource SimpleProgressBar}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+            		</Grid>
+            		<Grid Margin="10,0,19,3.76" Height="26.62" VerticalAlignment="Bottom" x:Name="progressBarTotalGrid1" Grid.Row="3">
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition Width="0.117*"/>
+            				<ColumnDefinition Width="0.883*"/>
+            			</Grid.ColumnDefinitions>
+            			<Label FontSize="12" Foreground="Black" Width="Auto" Height="Auto" Content="Total :" VerticalAlignment="Center" Margin="0,0,18.808,0" d:LayoutOverrides="Width" Style="{DynamicResource LabelStyleOuterGlowEffect}"/>
+                        <!--<Label Margin="0,0,0.001,0" Style="{DynamicResource SimpleLabel}" Height="Auto" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="labelProgressBarTotalValue" FontSize="11" Grid.Column="1"/>-->
+            			<ProgressBar x:Name="progressBarTotal1" Value="{Binding TotalDecryptionProgress}" Margin="0" Style="{DynamicResource SimpleProgressBar}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" d:LayoutOverrides="GridBox"/>
+            		</Grid>
+            		<Button Command="{Binding RemoveDecryptionItemsCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" FontSize="12" FontWeight="Normal" Margin="0,0,19,8"   HorizontalAlignment="Right" Width="37.601" x:Name="buttonRemove1" ToolTip="Remove selected file" Grid.Row="1" Height="30.72" VerticalAlignment="Bottom">
+            			<Image Width="24" Height="24" Source="/BeRMOoDA.WPF.FileEncryptor;component/Images/Delete.png" Stretch="Fill"/>
+            		</Button>
+            		<Button Command="{Binding ClearDecryptionItemsCommand}" Foreground="#FFFFFFFF" Style="{DynamicResource ButtonStyle1}" FontSize="12" FontWeight="Normal" Margin="0,0,19,40.72"   HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="37.601" Height="30.92" x:Name="buttonNew1" ToolTip="Clear llist" Grid.Row="1">
+            			<Image Width="24" Height="24" Source="/BeRMOoDA.WPF.FileEncryptor;component/Images/file.png" Stretch="Fill"/>
+            		</Button>
+            		<StackPanel Margin="10,0,60.601,0" Orientation="Horizontal" Grid.Row="2">
+            			<CheckBox FontSize="12" Foreground="Black" x:Name="checkBoxOnTheFlyEncryption1" Style="{DynamicResource CheckBoxStyleOuterGlowEffect}" Height="Auto" Content=" On the fly encryption" IsChecked="False" IsEnabled="True" Margin="15,10,10,10" VerticalAlignment="Center" />
+            			<Label x:Name="labelRemaningEncrypt_Copy1" Content="Elapsed Time:" FontSize="12" Foreground="Black" Style="{DynamicResource LabelStyleOuterGlowEffect}" Padding="0" Margin="10,10,3,10" Background="{x:Null}" VerticalAlignment="Center"/>
+            			<Label Content="{Binding DecryptionElapsedTime, Converter={StaticResource ElapsedTimeConverter}}" Margin="3,10,10,10" Style="{DynamicResource LabelStyleOuterGlowEffect}" MinWidth="50" Padding="0" FontSize="12" VerticalAlignment="Center"/>
+            			<Label x:Name="labelRemaningEncrypt1" Content="Remaning Time:" FontSize="12" Foreground="Black" Padding="0" Style="{DynamicResource LabelStyleOuterGlowEffect}" Margin="5,10,3,10" VerticalAlignment="Center"/>
+            			<Label Content="{Binding DecryptionRemainingTime, Converter={StaticResource ElapsedTimeConverter}}" Style="{DynamicResource LabelStyleOuterGlowEffect}" MinWidth="50" Margin="3" FontSize="12" Padding="0" VerticalAlignment="Center"/>
+            		</StackPanel>
+            	</Grid>
+            </Expander>
+        </Grid>
+    </Grid>
+</UserControl>

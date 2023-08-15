@@ -1,0 +1,78 @@
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.config
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.application
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csprojResolveAssemblyReference.cache
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.baml
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.g.cs
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.g.cs
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.g.cs
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.cache
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.lref
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.baml
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Simple Styles.baml
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.baml
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.g.resources
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.Properties.Resources.resources
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.GenerateResource.cache
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CoreCompileInputs.cache
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.TrustInfo.xml
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.application
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CopyComplete
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+D:\C#\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.config
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.application
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csprojResolveAssemblyReference.cache
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.baml
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.g.cs
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.g.cs
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.g.cs
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.cache
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.lref
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.baml
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Simple Styles.baml
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.baml
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.g.resources
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.Properties.Resources.resources
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.GenerateResource.cache
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CoreCompileInputs.cache
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.TrustInfo.xml
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.application
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CopyComplete
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+E:\LEARNINGS\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.config
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.application
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\bin\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csprojResolveAssemblyReference.cache
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.baml
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.g.cs
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.g.cs
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\App.g.cs
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.cache
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor_MarkupCompile.lref
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\MainWindow.baml
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Simple Styles.baml
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\Views\MainContentView.baml
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.g.resources
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.Properties.Resources.resources
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.GenerateResource.cache
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CoreCompileInputs.cache
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.TrustInfo.xml
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe.manifest
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.application
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.csproj.CopyComplete
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.exe
+D:\C#\prefect sourcess\____MINE\project in 99\FileEncryptor\BeRMOoDA.WPF.FileEncryptor\obj\x86\Debug\BeRMOoDA.WPF.FileEncryptor.pdb
